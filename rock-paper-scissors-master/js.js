@@ -17,6 +17,9 @@ circles.forEach((circle) => {
     circle.parentElement.style.placeItems = "start";
     //animating according to which circle is clicked
     document.querySelector(".bottom").classList.add("col");
+    document.querySelector(".house").classList.add("h1__show");
+    document.querySelector(".you").classList.add("h1__show");
+
     if (targetName == "scissors") {
       circle.classList.add("animate-scissors");
       //giving display none to unselected circles
@@ -139,6 +142,8 @@ const creatingReset = (e) => {
     }
     //////////=========================================================================
     document.querySelector(".bottom").classList.remove("col");
+    document.querySelector(".house").classList.remove("h1__show");
+    document.querySelector(".you").classList.remove("h1__show");
     document.querySelector(".triangle").classList.remove("none");
     document.querySelector(".bottom").style.placeItems = "center";
     //////////=========================================================================
@@ -155,3 +160,17 @@ const creatingReset = (e) => {
     document.querySelector(".made").remove();
   });
 };
+//===================Rules Modal =================================
+const rulesBtn = document.querySelector(".rules");
+const rulesModal = document.querySelector(".modal");
+const cross = document.querySelector(".cross");
+const overlay = document.querySelector(".overlay");
+
+rulesBtn.addEventListener("click", () => {
+  overlay.classList.add("dropOverlay");
+  rulesModal.classList.add("dropModal");
+});
+cross.addEventListener("click", () => {
+  overlay.classList.remove("dropOverlay");
+  rulesModal.classList.remove("dropModal");
+});
