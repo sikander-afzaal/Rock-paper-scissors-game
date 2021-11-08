@@ -93,6 +93,8 @@ const shuffle = (n) => {
 };
 //checks result and updates the score
 const checkingScore = (ai, target) => {
+  const selectedElement = document.querySelector(".selected");
+  const aiElement = document.querySelector(".made");
   const score = document.querySelector(".score");
   let innerValue = parseInt(score.innerText);
   let win = false;
@@ -104,10 +106,12 @@ const checkingScore = (ai, target) => {
     creatingReset(!win);
     innerValue += 1;
     score.innerText = innerValue;
+    selectedElement.classList.add("winner");
   } else if (target === ai) {
     creatingReset("TIE");
   } else {
     creatingReset(win);
+    aiElement.classList.add("winner");
   }
 };
 //a function to reset the whole game when play again button is pressed
@@ -146,6 +150,7 @@ const creatingReset = (e) => {
     document.querySelector(".you").classList.remove("h1__show");
     document.querySelector(".triangle").classList.remove("none");
     document.querySelector(".bottom").style.placeItems = "center";
+    document.querySelector(".winner").classList.remove("winner");
     //////////=========================================================================
     document
       .querySelector(".bottom")
