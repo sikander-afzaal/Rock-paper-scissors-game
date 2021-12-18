@@ -108,7 +108,7 @@ const checkingScore = (ai, target) => {
     score.innerText = innerValue;
     selectedElement.classList.add("winner");
   } else if (target === ai) {
-    creatingReset("TIE");
+    creatingReset(null);
   } else {
     creatingReset(win);
     aiElement.classList.add("winner");
@@ -128,7 +128,7 @@ const creatingReset = (e) => {
   document.querySelector(".bottom").appendChild(div);
   if (e === true) {
     h1.innerText = "YOU WIN!";
-  } else if (e === "TIE") {
+  } else if (e === null) {
     h1.innerText = "DRAW!";
   } else {
     h1.innerText = "YOU LOSE!";
