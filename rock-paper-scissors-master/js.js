@@ -144,7 +144,7 @@ const creatingReset = (e) => {
     document.querySelector(".you").classList.remove("h1__show");
     document.querySelector(".triangle").classList.remove("none");
     document.querySelector(".bottom").style.placeItems = "center";
-    if(document.querySelector(".winner") != false){
+    if(document.querySelector(".winner") != null){
        document.querySelector(".winner").classList.remove("winner");
   }
     //////////=========================================================================
@@ -159,7 +159,6 @@ const creatingReset = (e) => {
     //////////=========================================================================
     div.remove();
     document.querySelector(".made").remove();
-     document.querySelector(".selected").classList.remove("selected")
     
   });
 };
