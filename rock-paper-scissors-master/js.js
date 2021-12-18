@@ -144,7 +144,9 @@ const creatingReset = (e) => {
     document.querySelector(".you").classList.remove("h1__show");
     document.querySelector(".triangle").classList.remove("none");
     document.querySelector(".bottom").style.placeItems = "center";
-    document.querySelector(".winner").classList.remove("winner");
+    if(document.querySelector(".winner") != false){
+       document.querySelector(".winner").classList.remove("winner");
+  }
     //////////=========================================================================
     document
       .querySelector(".bottom")
