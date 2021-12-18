@@ -135,15 +135,9 @@ const creatingReset = (e) => {
   }
   //////////=========================================================================
   document.querySelector(".play-again").addEventListener("click", () => {
-    if (
-      document.querySelector(".selected").classList.contains("animate-scissors")
-    ) {
-      document.querySelector(".selected").classList.remove("animate-scissors");
-    } else if (
-      document.querySelector(".selected").classList.contains("animate-rock")
-    ) {
-      document.querySelector(".selected").classList.remove("animate-rock");
-    }
+      document.querySelector(".selected").classList.remove("animate-scissors")
+      document.querySelector(".selected").classList.remove("animate-paper")
+      document.querySelector(".selected").classList.remove("animate-rock")
     //////////=========================================================================
     document.querySelector(".bottom").classList.remove("col");
     document.querySelector(".house").classList.remove("h1__show");
@@ -163,6 +157,8 @@ const creatingReset = (e) => {
     //////////=========================================================================
     div.remove();
     document.querySelector(".made").remove();
+     document.querySelector(".selected").classList.remove("selected")
+    
   });
 };
 //===================Rules Modal =================================
